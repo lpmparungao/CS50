@@ -237,7 +237,7 @@ function love.keypressed(key)
     -- transition to the next appropriate state
 	elseif key == '2' and gameState == 'start' then
 		aiMode = true
-	elseif key == 'x' and gameState == 'start' then
+	elseif key == '1' and gameState == 'start' then
 		aiMode = false
     elseif key == 'enter' or key == 'return' then
         if gameState == 'start' then
@@ -292,14 +292,14 @@ function love.draw()
 		-- To put up AI mode functions
 		if aiMode == false then
             love.graphics.setFont(smallFont)
-            love.graphics.setColor(0, 0, 0)
-			love.graphics.printf('To play with AI, press A!', 0, 50, VIRTUAL_WIDTH, 'center')
+            love.graphics.setColor(255, 255, 255)
+			love.graphics.printf('To play with AI, press 2!', 0, 50, VIRTUAL_WIDTH, 'center')
             love.graphics.setFont(smallFont)
 			love.graphics.printf('AI Mode: ' .. tostring(aiMode), 0, 185, VIRTUAL_WIDTH, 'center')
 		elseif aiMode == true then
 			love.graphics.setFont(smallFont)
-			love.graphics.printf('To stop playing with the AI, press X!', 0, 50, VIRTUAL_WIDTH, 'center')
-			love.graphics.setFont(largeFont)
+			love.graphics.printf('To stop playing with the AI, press 1!', 0, 50, VIRTUAL_WIDTH, 'center')
+			love.graphics.setFont(smallFont)
 			love.graphics.printf('AI Mode: ' .. tostring(aiMode), 0, 185, VIRTUAL_WIDTH, 'center')
 		end
     elseif gameState == 'serve' then
